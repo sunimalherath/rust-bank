@@ -29,5 +29,9 @@ impl Bank {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let bank = Bank::new();
+    let account = Account::new(1, String::from("John Doe"));
+
+    println!("{:#?}", bank);
+    println!("{:#?}", account);
 }
