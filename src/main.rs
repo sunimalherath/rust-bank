@@ -26,9 +26,18 @@ impl Bank {
             accounts: vec![]
         }
     }
+
+    // taking the ownership of the 'account' that passed into this method
+    fn add_account(&mut self, account: Account) {
+        self.accounts.push(account);
+    }
 }
 
 fn main() {
-    let bank = Bank::new();
+    let mut bank = Bank::new();
     let account = Account::new(1, String::from("John Doe"));
+
+    bank.add_account(account);
+
+    println!("{:#?}", bank);
 }
